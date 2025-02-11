@@ -6,9 +6,8 @@ import {
 } from "@tanstack/react-table";
 import { LoaderCircle, Plus } from "lucide-react";
 
-import { Skeleton } from "../ui/skeleton";
-
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   Table,
   TableBody,

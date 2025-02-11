@@ -2,15 +2,14 @@ import { ColumnDef } from "@tanstack/react-table";
 import { CheckCircle, CircleX, Plus } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-import { useTransferMutation } from "./hooks/use-transfer-mutation";
-import { useTransfersQuery } from "./hooks/use-transfers-query";
-
 import { DataTable } from "@/components/custom/data-table";
 import { Page, PageActions } from "@/components/custom/page";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { TransferRequest } from "@/models/transfer-request/transfer-request.model";
+import { useTransferMutation } from "@/pages/transfer-requests/hooks/use-transfer-mutation";
+import { useTransfersQuery } from "@/pages/transfer-requests/hooks/use-transfers-query";
 import {
   badgeVariantMapping,
   statusMapping,

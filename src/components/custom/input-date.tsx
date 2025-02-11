@@ -41,7 +41,7 @@ export const InputDate = React.forwardRef<HTMLDivElement, DateInputProps>(
             <Button
               variant={"outline"}
               className={cn(
-                "w-full pl-3 text-left font-normal",
+                "w-full pl-3 text-left font-normal bg-transparent",
                 !dateValue && "text-muted-foreground",
               )}
             >

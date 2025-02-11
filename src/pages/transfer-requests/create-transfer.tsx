@@ -180,7 +180,12 @@ export function CreateTransfer() {
           <Accordion
             type="multiple"
             className="col-span-full"
-            defaultValue={["recipient-info", "bank-details", "wallet-details"]}
+            defaultValue={[
+              "recipient-info",
+              "bank-details",
+              "wallet-details",
+              "address-details",
+            ]}
           >
             <hr className="mt-4" />
             <AccordionItem className="border-0" value="recipient-info">
@@ -644,7 +649,10 @@ export function CreateTransfer() {
                       <FormItem>
                         <FormLabel>Country Code</FormLabel>
                         <FormControl>
-                          <Input placeholder="Country Code" {...field} />
+                          <Input
+                            placeholder="ISO 3166-1 alpha-2 country code"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -680,8 +688,14 @@ export function CreateTransfer() {
                       </FormItem>
                     )}
                   />
-
-                  <h1 className="col-span-full mt-4">Address Information</h1>
+                </AccordionContent>
+              </AccordionItem>
+            )}
+            {transferType === "FIAT" && (
+              <AccordionItem className="border-0" value="address-details">
+                <hr className="mt-4" />
+                <AccordionTrigger>Address Details</AccordionTrigger>
+                <AccordionContent className="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,_minmax(280px,_1fr))] gap-2">
                   <FormField
                     control={form.control}
                     name="recipientsInfo.0.bankDetails.physicalAddress.address1"
@@ -713,9 +727,9 @@ export function CreateTransfer() {
                     name="recipientsInfo.0.bankDetails.physicalAddress.country"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Bank Account Country Code</FormLabel>
+                        <FormLabel>Bank Account Country</FormLabel>
                         <FormControl>
-                          <Input placeholder="Country Code" {...field} />
+                          <Input placeholder="Country" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>

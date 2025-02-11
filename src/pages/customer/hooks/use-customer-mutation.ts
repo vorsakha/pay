@@ -27,7 +27,7 @@ const useCustomerMutation = () => {
         variant: "default",
       });
 
-      navigate(ROUTES.HOME);
+      navigate(ROUTES.CUSTOMERS.LIST);
     },
     onError: (error: AxiosError<{ message: string }>) => {
       toast({

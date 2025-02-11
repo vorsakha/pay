@@ -1,10 +1,21 @@
+import { QueryClientProvider } from "@tanstack/react-query";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+
+import { Toaster } from "@/components/ui/toaster";
+import { queryClient } from "@/config/query-client";
+import { Router } from "@/routes/router";
+
+import "@/styles/globals.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1 className="text-blue-600 font-mono">Vite + React</h1>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Router />
+        <Toaster />
+      </BrowserRouter>
+    </QueryClientProvider>
   </StrictMode>,
 );

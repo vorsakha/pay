@@ -54,7 +54,7 @@ export function AppSidebar() {
       <SidebarHeader>
         <Link
           to={ROUTES.HOME}
-          className="flex items-center justify-center text-5xl font-mono p-2 hover:opacity-70 transition-all duration-200"
+          className="flex items-center justify-center text-5xl text-primary font-mono p-2 hover:opacity-70 transition-all duration-200"
         >
           <span className="inline-flex items-center gap-1">
             <Coins className="mr-[-10px] w-11 h-11" /> PAY

@@ -110,7 +110,10 @@ export function DataTable<T>({
             ))}
           </TableHeader>
           {isLoading ? (
-            <DataTableSkeleton columns={columns.length} length={data.length} />
+            <DataTableSkeleton
+              columns={columns.length}
+              length={data.length || 5}
+            />
           ) : (
             <TableBody>
               {table.getRowModel().rows?.length ? (
